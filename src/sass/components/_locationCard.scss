@@ -1,0 +1,208 @@
+@use '../utils' as *;
+
+.locations {
+	&__places {
+		@include display-flex(flex-start, flex-start, 2.5rem);
+		flex-wrap: wrap;
+		margin-top: 1.25rem;
+
+		&-item {
+			@include display-flex(flex-start, flex-start, null);
+			border-radius: 1.5rem;
+			background-color: #f7d5ff;
+			box-shadow: 4px 4px 70px -40px;
+			font-family: var(--f-heading-navbar);
+			flex-direction: column;
+			padding: 1rem;
+
+			> img {
+				@extend %img-reset;
+				border-radius: 1rem;
+				margin-bottom: 0.5rem;
+				max-width: 380px;
+				object-fit: cover;
+				align-self: center;
+			}
+
+			&__name {
+				font-size: 1.5rem;
+				font-weight: bold;
+			}
+
+			&__categories {
+				@extend %reset-list-style;
+				@include display-flex(null, center, 0.25rem);
+				margin: -0.15rem 0 0.5rem 0;
+				li {
+					background-color: var(--c-prim-light);
+					border-radius: 999999px;
+					color: var(--c-white);
+					font-size: 0.9rem;
+					padding: 0 0.5rem;
+				}
+			}
+
+			p {
+				span {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 1000px) {
+		&__places {
+			gap: 1.5rem;
+			&-item {
+				> img {
+					max-width: 325px;
+				}
+				&__name {
+					font-size: 1.4rem;
+				}
+				&__categories li {
+					font-size: 0.85rem;
+				}
+				&__address,
+				&__workHours,
+				&__country {
+					font-size: 0.9rem;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 900px) {
+		&__places-item img {
+			max-width: 280px;
+		}
+	}
+
+	@media screen and (max-width: 800px) {
+		&__places {
+			gap: 1.25rem;
+			&-item {
+				> img {
+					max-width: 230px;
+				}
+				&__name {
+					font-size: 1.25rem;
+				}
+				&__categories li {
+					font-size: 0.75rem;
+				}
+				&__address,
+				&__workHours,
+				&__country {
+					font-size: 0.8rem;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 700px) {
+		&__places {
+			margin-top: 0.75rem;
+			&-item {
+				padding: 0.65rem;
+				> img {
+					max-width: 190px;
+				}
+				&__name {
+					font-size: 1rem;
+				}
+				&__categories li {
+					padding-top: 0.1rem;
+					font-size: 0.6rem;
+				}
+				&__address,
+				&__workHours,
+				&__country {
+					font-size: 0.65rem;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 600px) {
+		&__places-item {
+			padding: 0.65rem;
+			> img {
+				max-width: 145px;
+			}
+			&__name {
+				font-size: 0.9rem;
+			}
+			&__categories li {
+				font-size: 0.5rem;
+			}
+			&__address,
+			&__workHours,
+			&__country {
+				font-size: 0.55rem;
+			}
+		}
+	}
+
+	@media screen and (max-width: 500px) {
+		&__places {
+			flex-direction: column;
+			align-items: center;
+			&-item {
+				padding: 0.65rem;
+				> img {
+					max-width: 220px;
+				}
+				&__name {
+					font-size: 1.1rem;
+				}
+				&__categories li {
+					font-size: 0.55rem;
+				}
+				&__address,
+				&__workHours,
+				&__country {
+					font-size: 0.7rem;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 450px) {
+		&__places-item {
+			> img {
+				max-width: 180px;
+			}
+			&__name {
+				font-size: 1rem;
+			}
+			&__categories li {
+				font-size: 0.55rem;
+			}
+			&__address,
+			&__workHours,
+			&__country {
+				font-size: 0.65rem;
+			}
+		}
+	}
+
+	@media screen and (max-width: 400px) {
+		&__places-item {
+			> img {
+				max-width: 160px;
+			}
+			&__name {
+				font-size: 0.9rem;
+			}
+			&__categories li {
+				font-size: 0.45rem;
+			}
+			&__address,
+			&__workHours,
+			&__country {
+				font-size: 0.6rem;
+			}
+		}
+	}
+}

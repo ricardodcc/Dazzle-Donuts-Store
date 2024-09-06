@@ -1,0 +1,144 @@
+@use '../utils' as *;
+
+.blogForm {
+	&__form {
+		@include display-flex(center, center, 0.5rem);
+		flex-direction: column;
+
+		h3 {
+			font-family: var(--f-company-name);
+			color: var(--c-prim-light);
+			font-size: 2.5rem;
+			letter-spacing: 3px;
+		}
+	}
+
+	&__input {
+		@include display-flex(center, center, 0.5rem);
+		font-family: var(--f-heading-navbar);
+		font-weight: bold;
+
+		label {
+			color: var(--c-prim-light);
+			font-family: var(--f-heading-navbar);
+			font-weight: bold;
+			font-size: 1.5rem;
+		}
+		input,
+		textarea {
+			font-size: 0.95rem;
+			border-color: transparent;
+			border-radius: 0.25rem;
+			padding: 0.25rem;
+			font-family: var(--f-heading-navbar);
+			&::placeholder {
+				color: var(--c-black);
+				opacity: 0.5;
+				font-family: var(--f-heading-navbar);
+				padding-left: 0.25rem;
+				font-size: 1rem;
+			}
+			&:focus {
+				outline: none;
+			}
+		}
+		textarea {
+			border-radius: 0.25rem;
+			max-width: 400px;
+			min-width: 100px;
+			min-height: 2rem;
+		}
+
+		button {
+			@include display-flex(null, center, 0.5rem);
+			margin-top: 0.5rem;
+			margin-bottom: 1.5rem;
+		}
+	}
+
+	@media screen and (max-width: 1500px) {
+		&__form h3 {
+			font-size: 2.25rem;
+		}
+		&__input {
+			label {
+				font-size: 1.25rem;
+			}
+			input,
+			textarea {
+				font-size: 0.8rem;
+			}
+		}
+	}
+
+	@media screen and (max-width: 1170px) {
+		&__form h3 {
+			font-size: 2rem;
+		}
+		&__input {
+			label {
+				font-size: 1.15rem;
+			}
+			input,
+			textarea {
+				font-size: 0.75rem;
+				padding: 0.15rem;
+			}
+		}
+	}
+
+	@media screen and (max-width: 720px) {
+		&__form h3 {
+			font-size: 2.15rem;
+		}
+		&__input {
+			label {
+				font-size: 1.25rem;
+			}
+		}
+	}
+
+	@media screen and (max-width: 580px) {
+		&__form h3 {
+			font-size: 1.75rem;
+		}
+		&__input {
+			label {
+				font-size: 1.05rem;
+			}
+			input,
+			textarea {
+				font-size: 0.75rem;
+				padding: unset;
+			}
+			button {
+				margin-top: unset;
+			}
+		}
+	}
+
+	@media screen and (max-width: 500px) {
+		&__form h3 {
+			font-size: 1.5rem;
+		}
+		&__input {
+			label {
+				font-size: 0.9rem;
+			}
+			input,
+			textarea {
+				font-size: 0.6rem;
+			}
+		}
+	}
+
+	@media screen and (max-width: 400px) {
+		&__form h3 {
+			font-size: 1.3rem;
+		}
+		&__input button {
+			font-size: 0.4rem;
+			padding: 0.1rem 0.4rem;
+		}
+	}
+}

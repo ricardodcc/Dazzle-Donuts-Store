@@ -1,0 +1,151 @@
+@use '../utils' as *;
+
+.blog {
+	&__posts {
+		@include display-flex(flex-start, flex-start, 1.25rem);
+		flex-wrap: wrap;
+		margin-top: 0.5rem;
+
+		&-item {
+			@include display-flex(flex-start, flex-start, null);
+			border-radius: 0.75rem;
+			background-color: white;
+			box-shadow: 4px 4px 70px -40px;
+			font-family: var(--f-heading-navbar);
+			flex-direction: column;
+			padding: 0.75rem;
+
+			&__title {
+				font-size: 1.25rem;
+				font-weight: bold;
+			}
+			h3,
+			p span {
+				color: var(--c-prim-light);
+				font-weight: bold;
+			}
+			p {
+				line-height: 1.25rem;
+				span {
+					margin-right: 0.25rem;
+				}
+			}
+		}
+	}
+
+	&__buttons {
+		@include display-flex(flex-start, center, 0.5rem);
+		margin-top: 0.5rem;
+		button {
+			padding: 0.05rem 0.75rem;
+			font-size: 0.75rem;
+		}
+	}
+
+	@media screen and (max-width: 1000px) {
+		&__posts-item {
+			&__title {
+				font-size: 1.1rem;
+			}
+			p,
+			span {
+				font-size: 0.9rem;
+				word-break: break-word;
+			}
+		}
+		&__buttons {
+			margin-top: 0.25rem;
+			button {
+				font-size: 0.7rem;
+			}
+		}
+	}
+
+	@media screen and (max-width: 1000px) {
+		&__posts-item {
+			&__title {
+				font-size: 1.1rem;
+			}
+			p,
+			span {
+				font-size: 0.9rem;
+			}
+		}
+		&__buttons {
+			margin-top: 0.25rem;
+			button {
+				font-size: 0.7rem;
+			}
+		}
+	}
+
+	@media screen and (max-width: 860px) {
+		&__posts-item {
+			&__title {
+				font-size: 0.9rem;
+			}
+			p,
+			span {
+				font-size: 0.8rem;
+			}
+		}
+		&__buttons {
+			margin-top: 0.15rem;
+			button {
+				font-size: 0.6rem;
+			}
+		}
+	}
+
+	@media screen and (max-width: 720px) {
+		&__posts-item {
+			&__title {
+				font-size: 0.9rem;
+			}
+			p,
+			span {
+				font-size: 0.8rem;
+			}
+		}
+		&__buttons {
+			margin-top: 0.15rem;
+			button {
+				font-size: 0.6rem;
+			}
+		}
+	}
+
+	@media screen and (max-width: 500px) {
+		&__posts-item {
+			&__title {
+				font-size: 0.9rem;
+			}
+			p,
+			span {
+				font-size: 0.8rem;
+			}
+		}
+		&__buttons button {
+			font-size: 0.6rem;
+		}
+	}
+
+	@media screen and (max-width: 400px) {
+		&__posts-item {
+			padding: 0.4rem;
+			&__title {
+				font-size: 0.8rem;
+			}
+			p,
+			span {
+				font-size: 0.7rem;
+			}
+		}
+		&__buttons {
+			margin-top: -0.25rem;
+			button {
+				font-size: 0.55rem;
+			}
+		}
+	}
+}

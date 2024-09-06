@@ -1,0 +1,147 @@
+@use '../utils' as *;
+
+.footer {
+	@include display-flex(center, center, 3.75rem);
+	color: var(--c-white);
+	font-family: var(--f-heading-navbar);
+	padding-bottom: 2rem;
+	&__company {
+		@include display-flex(center, center, 1rem);
+		&-logo {
+			max-width: 85px;
+			@media screen and (max-width: 360px) {
+				max-width: 45px;
+			}
+		}
+		&-text {
+			font-family: var(--f-company-name);
+			font-size: 2rem;
+			letter-spacing: 2px;
+			@media screen and (max-width: 360px) {
+				font-size: 0.78rem;
+			}
+		}
+	}
+	&__contacts {
+		font-weight: bold;
+		p {
+			margin-top: -0.5rem;
+		}
+		&-socials {
+			@include display-flex(flex-start, center, 0.75rem);
+			&__list {
+				@include display-flex(flex, center, 0.5rem);
+				&-item {
+					img {
+						max-width: 1.4rem;
+					}
+				}
+			}
+		}
+	}
+
+	// media queries
+	@media screen and (max-width: 1500px) {
+		&__company {
+			&-log {
+				max-width: 76px;
+			}
+			&-text {
+				font-size: 1.75rem;
+			}
+		}
+	}
+
+	@media screen and (max-width: 1350px) {
+		&__company {
+			&-log {
+				max-width: 70px;
+			}
+			&-text {
+				font-size: 1.5rem;
+			}
+		}
+		&__contacts {
+			p {
+				font-size: 0.9rem;
+			}
+			&-socials__list-item {
+				img {
+					max-width: 1.2rem;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 900px) {
+		&__company {
+			&-log {
+				max-width: 50px;
+			}
+			&-text {
+				font-size: 1.15rem;
+			}
+		}
+		&__contacts {
+			p {
+				font-size: 0.75rem;
+			}
+			&-socials__list-item {
+				img {
+					max-width: 1rem;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 720px) {
+		flex-direction: column-reverse;
+		gap: unset;
+		text-align: center;
+
+		&__company {
+			&-logo {
+				max-width: 70px;
+			}
+			&-text {
+				font-size: 1.5rem;
+			}
+		}
+		&__contacts {
+			p {
+				font-size: 1rem;
+			}
+			&-socials {
+				justify-content: center;
+				&__list-item {
+					img {
+						max-width: 1rem;
+						padding-bottom: 0.5rem;
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 500px) {
+		&__company {
+			&-logo {
+				max-width: 55px;
+			}
+			&-text {
+				font-size: 1rem;
+			}
+		}
+		&__contacts {
+			p {
+				font-size: 0.7rem;
+				margin-top: -0.25rem;
+			}
+			&-socials__list-item {
+				img {
+					max-width: 1rem;
+				}
+			}
+		}
+	}
+}

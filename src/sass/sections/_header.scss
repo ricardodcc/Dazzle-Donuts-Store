@@ -1,0 +1,197 @@
+@use '../utils' as *;
+
+.header {
+	@include display-flex(space-between, center);
+
+	font-family: var(--f-heading-navbar);
+	font-weight: bold;
+	color: var(--c-prim-light);
+	padding: 0.5rem 0;
+
+	&__logo {
+		a {
+			@include display-flex(center, center);
+
+			> img {
+				@extend %img-reset;
+				max-width: 65px;
+			}
+		}
+	}
+
+	&__navigation {
+		@include display-flex(null, null, null);
+		margin-top: 1rem;
+		padding-bottom: 0.5rem;
+		&-list {
+			@extend %reset-list-style;
+			@include display-flex(center, center, 2.5rem);
+			font-size: 1.5rem;
+		}
+
+		&-item {
+			color: var(--c-prim-light);
+			position: relative;
+			text-decoration: none;
+			transition: all 0.1s ease;
+			&:hover,
+			&.active {
+				color: #6e0999;
+			}
+			&::after {
+				position: absolute;
+				content: '.';
+				background-color: #6e0999;
+				color: transparent;
+				width: 0%;
+				bottom: 25%;
+				right: 0;
+				left: 0;
+				margin: auto;
+				height: 2px;
+				transition: all 0.5s ease;
+			}
+			&:hover::after {
+				width: 100%;
+			}
+		}
+	}
+
+	&__functionalities {
+		@include display-flex(center, center, 1rem);
+		img {
+			max-width: 1.75rem;
+		}
+		&-currency {
+			@include display-flex(center, center);
+			font-size: 1.4rem;
+			position: relative;
+			p {
+				margin-top: 0.25rem;
+			}
+			> svg {
+				max-width: 1.75rem;
+			}
+		}
+
+		&-cart,
+		&-currency > img:last-child,
+		&-burger {
+			cursor: pointer;
+		}
+
+		&-burger {
+			display: none;
+		}
+	}
+
+	// media queries
+	@media screen and (max-width: 1150px) {
+		padding: unset;
+	}
+
+	@media screen and (max-width: 1000px) {
+		&__logo {
+			a {
+				> img {
+					max-width: 55px;
+				}
+			}
+		}
+		&__navigation {
+			&-list {
+				font-size: 1.25rem;
+			}
+		}
+		&__functionalities {
+			font-size: 1.25rem;
+			img {
+				max-width: 1.35rem;
+			}
+			&-currency {
+				> svg {
+					max-width: 1.35rem;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 860px) {
+		&__navigation {
+			&-list {
+				gap: 1.25rem;
+			}
+		}
+		&__functionalities {
+			img {
+				max-width: 1.15rem;
+			}
+
+			&-currency {
+				font-size: 1.1rem;
+				> svg {
+					max-width: 1.15rem;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 720px) {
+		&__navigation {
+			display: none;
+		}
+		&__functionalities {
+			img {
+				max-width: 1.75rem;
+			}
+			&-currency {
+				font-size: 1.3rem;
+				> svg {
+					max-width: 1.75rem;
+				}
+			}
+			&-burger {
+				display: flex;
+			}
+		}
+	}
+
+	@media screen and (max-width: 500px) {
+		&__functionalities {
+			img {
+				max-width: 1.5rem;
+			}
+			&-currency {
+				font-size: 1.1rem;
+				> svg {
+					max-width: 1.35rem;
+				}
+			}
+			&-burger {
+				max-width: 20px;
+			}
+		}
+	}
+
+	@media screen and (max-width: 400px) {
+		&__logo {
+			a {
+				> img {
+					max-width: 40px;
+				}
+			}
+		}
+		&__functionalities {
+			img {
+				max-width: 1.2rem;
+			}
+			&-currency {
+				font-size: 1rem;
+				> svg {
+					margin-right: -0.15rem;
+					max-width: 1.15rem;
+				}
+			}
+		}
+	}
+}

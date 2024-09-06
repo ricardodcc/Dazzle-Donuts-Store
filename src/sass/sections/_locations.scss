@@ -1,0 +1,203 @@
+@use '../utils' as *;
+
+.locations {
+	&__heading {
+		font-family: var(--f-company-name);
+		color: var(--c-white);
+		font-size: 2.5rem;
+		letter-spacing: 2px;
+	}
+
+	&__filters {
+		@include display-flex(null, baseline, null);
+		color: #8c00c9;
+		font-family: var(--f-heading-navbar);
+		font-weight: bold;
+		font-size: 1.15rem;
+
+		input {
+			border-color: transparent;
+			border-radius: 0.5rem;
+			margin-top: -0.5rem;
+			margin-bottom: 0.35rem;
+			padding: 0.35rem 0.25rem;
+
+			&::placeholder {
+				color: var(--c-black);
+				opacity: 0.5;
+				font-family: var(--f-heading-navbar);
+				padding-left: 0.25rem;
+				font-size: 0.9rem;
+			}
+		}
+
+		span {
+			margin-right: 0.5rem;
+		}
+
+		&-list {
+			@extend %reset-list-style;
+			@include display-flex(center, center, 0.5rem);
+			padding-left: 0.5rem;
+
+			button {
+				background-color: var(--c-prim-light);
+				border-radius: 999999px;
+				color: var(--c-white);
+				font-size: 0.9rem;
+				padding: 0.5rem 0.75rem;
+				border: 0;
+				cursor: pointer;
+			}
+			&-mobile {
+				display: none !important;
+				@include display-flex(flex-start, center, 0.5rem);
+				button {
+					font-size: 0.65rem;
+					padding: 0.5rem;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 1000px) {
+		&__heading {
+			font-size: 2rem;
+		}
+
+		&__filters {
+			span,
+			input::placeholder {
+				font-size: 1rem;
+			}
+			button {
+				font-size: 0.8rem;
+			}
+		}
+	}
+
+	@media screen and (max-width: 800px) {
+		&__heading {
+			font-size: 1.75rem;
+		}
+
+		&__filters {
+			span,
+			input::placeholder {
+				font-size: 0.8rem;
+			}
+			input {
+				padding: 0.25rem;
+			}
+			button {
+				font-size: 0.65rem;
+				padding: 0.5rem;
+			}
+		}
+	}
+
+	@media screen and (max-width: 720px) {
+		&__filters-list {
+			display: none;
+			&-mobile {
+				display: flex !important;
+				padding-left: unset;
+				@include display-flex(flex-start, center, 0.5rem);
+				button {
+					font-size: 0.65rem;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 700px) {
+		&__heading {
+			font-size: 1.5rem;
+		}
+
+		&__filters {
+			margin-top: 0.25rem;
+			span,
+			input::placeholder {
+				font-size: 0.75rem;
+			}
+			input {
+				padding: 0.15rem;
+			}
+		}
+	}
+
+	@media screen and (max-width: 600px) {
+		&__heading {
+			font-size: 1.1rem;
+		}
+		&__filters {
+			margin-top: 0.25rem;
+			span,
+			input::placeholder {
+				font-size: 0.65rem;
+			}
+			input {
+				max-width: 125px;
+			}
+			&-list-mobile {
+				button {
+					font-size: 0.5rem;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 500px) {
+		&__heading {
+			font-size: 1rem;
+		}
+		&__filters {
+			span,
+			input::placeholder {
+				font-size: 0.6rem;
+			}
+			&-list-mobile {
+				button {
+					font-size: 0.45rem;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 450px) {
+		&__heading {
+			font-size: 0.82rem;
+		}
+		&__filters {
+			span,
+			input::placeholder {
+				font-size: 0.55rem;
+			}
+			input {
+				max-width: 90px;
+				padding: unset;
+			}
+			&-list-mobile {
+				button {
+					font-size: 0.4rem;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 400px) {
+		&__heading {
+			font-size: 0.7rem;
+		}
+		&__filters {
+			span,
+			input::placeholder {
+				font-size: 0.55rem;
+			}
+			input {
+				max-width: 70px;
+			}
+		}
+	}
+}

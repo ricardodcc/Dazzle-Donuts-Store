@@ -1,0 +1,29 @@
+@use '../utils' as *;
+
+.dropdown {
+	position: absolute;
+	top: 80%;
+	right: 5%;
+	background-color: var(--c-white);
+	z-index: 1;
+	border-radius: 1rem;
+	overflow: hidden;
+	&__list {
+		li {
+			cursor: pointer;
+			text-align: right;
+			padding: 0 0.45rem;
+			span {
+				margin-left: 0.4rem;
+			}
+			&.active,
+			&:hover {
+				background-color: var(--c-prim-light);
+				color: var(--c-white);
+			}
+			&:hover.active {
+				background-color: #8112b1;
+			}
+		}
+	}
+}

@@ -1,0 +1,165 @@
+@use '../utils' as *;
+
+.contacts {
+	@include display-flex(null, center, 2rem);
+	&__content {
+		width: 50%;
+		padding-bottom: 1rem;
+		h2 {
+			font-family: var(--f-company-name);
+			color: var(--c-prim-light);
+			font-size: 2.5rem;
+			letter-spacing: 4px;
+		}
+		&-form {
+			display: flex;
+			flex-direction: column;
+			max-width: 105%;
+			label {
+				color: var(--c-prim-light);
+				font-family: var(--f-heading-navbar);
+				font-weight: bold;
+			}
+			input,
+			textarea {
+				border-color: transparent;
+				border-radius: 0.5rem;
+				margin-top: -0.5rem;
+				margin-bottom: 0.35rem;
+				padding: 0.35rem 0;
+				&::placeholder {
+					color: var(--c-black);
+					opacity: 0.5;
+					font-family: var(--f-heading-navbar);
+					padding-left: 0.25rem;
+					font-size: 0.9rem;
+				}
+				&:focus {
+					outline: none;
+				}
+			}
+			textarea {
+				border-radius: 1rem;
+				max-width: 100%;
+				min-height: 2.5rem;
+			}
+			button {
+				@include display-flex(null, center, 0.5rem);
+				margin-top: 1rem;
+			}
+
+			p {
+				color: #69168d;
+				font-family: var(--f-heading-navbar);
+				margin-top: -0.5rem;
+				font-size: 0.9rem;
+			}
+		}
+	}
+	&__img {
+		width: 50%;
+		@include display-flex(center, center);
+		> img {
+			@extend %img-reset;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	// media queries
+	@media screen and (max-width: 1200px) {
+		&__content {
+			padding: 1.25rem 0;
+		}
+	}
+
+	@media screen and (max-width: 1000px) {
+		&__content {
+			h2 {
+				font-size: 2rem;
+			}
+			&-form {
+				max-width: 85%;
+			}
+		}
+	}
+
+	@media screen and (max-width: 800px) {
+		gap: 0;
+		&__content {
+			font-size: 1.5rem;
+			&-form {
+				label {
+					font-size: 0.9rem;
+				}
+				input,
+				textarea {
+					padding: 0.25rem 0;
+					&::placeholder {
+						font-size: 0.8rem;
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 720px) {
+		flex-direction: column;
+		&__content {
+			width: 100%;
+			h2 {
+				font-size: 2.5rem;
+			}
+			&-form {
+				max-width: 100%;
+				label {
+					font-size: 1rem;
+				}
+				input,
+				textarea {
+					padding: 0.35rem 0;
+					&::placeholder {
+						font-size: 0.9rem;
+					}
+				}
+			}
+		}
+		&__img {
+			width: 100%;
+		}
+	}
+
+	@media screen and (max-width: 500px) {
+		&__content {
+			h2 {
+				font-size: 1.5rem;
+			}
+			&-form {
+				input,
+				textarea {
+					padding: 0.25rem 0;
+					&::placeholder {
+						font-size: 0.8rem;
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 400px) {
+		&__content {
+			h2 {
+				font-size: 1.25rem;
+			}
+			&-form {
+				input,
+				textarea {
+					padding: 0.2rem 0;
+					&::placeholder {
+						font-size: 0.75rem;
+					}
+				}
+			}
+		}
+	}
+}

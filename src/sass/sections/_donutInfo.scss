@@ -1,0 +1,317 @@
+@use '../utils' as *;
+
+.individual {
+	@include display-flex(flex-start, flex-start, null);
+	flex: 0 0 auto;
+
+	&__name {
+		font-family: var(--f-company-name);
+		color: var(--c-prim-light);
+		font-size: 1.5rem;
+		letter-spacing: 2px;
+		margin: -1rem 0 0.5rem;
+
+		&.loading {
+			@include display-flex(center, center, null);
+			font-size: 3.25rem;
+			padding-bottom: 1rem;
+		}
+	}
+
+	.fixed {
+		color: var(--c-white);
+		font-size: 1.5rem;
+	}
+
+	&__galery {
+		width: 60%;
+
+		&-emphasis > img {
+			@extend %img-reset;
+			width: 100%;
+			height: auto;
+			border-radius: 1.25rem;
+		}
+
+		&-other ul {
+			@extend %reset-list-style;
+			@include display-flex(center, center, 0.75rem);
+			margin-top: 1.5rem;
+			display: flex;
+
+			li img {
+				cursor: pointer;
+				max-width: 100%;
+				border-radius: 1.25rem;
+				opacity: 0.6;
+
+				&.active {
+					opacity: unset;
+				}
+			}
+		}
+	}
+
+	&__content {
+		width: 50%;
+		@include display-flex(null, flex-start, 0.5rem);
+		padding: 1rem 0 0 1rem;
+		flex-direction: column;
+
+		p span {
+			color: var(--c-prim-light);
+			font-family: var(--f-heading-navbar);
+			font-weight: bold;
+		}
+
+		&__ingredients-list {
+			font-family: var(--f-heading-navbar);
+			font-weight: bold;
+			font-size: 1.1rem;
+			list-style-type: circle;
+			padding-left: 1.75rem;
+			margin: -1rem 0 0.5rem 0;
+			li {
+				margin-bottom: -0.5rem;
+				color: var(--c-prim-light);
+				text-transform: capitalize;
+			}
+		}
+
+		&__cart {
+			@include display-flex(flex-start, center, 0.5rem);
+			margin-top: -1.75rem;
+			label {
+				margin: unset;
+			}
+			input {
+				border-radius: 1.5rem;
+				border-color: transparent;
+				font-size: 1rem;
+				padding: 0.15rem 0.4rem;
+				max-width: 3.5rem;
+			}
+
+			input::-webkit-outer-spin-button,
+			input::-webkit-inner-spin-button {
+				-webkit-appearance: none;
+			}
+		}
+	}
+
+	@media screen and (max-width: 1500px) {
+		&__name span,
+		.fixed,
+		h2 {
+			font-size: 1.25rem;
+		}
+		&__content__cart input {
+			font-size: 0.9rem;
+			padding: 0.15rem 0.4rem;
+			max-width: 3rem;
+		}
+		&__name.loading {
+			font-size: 2.5rem;
+		}
+	}
+
+	@media screen and (max-width: 1350px) {
+		&__btn {
+			font-size: 0.75rem !important;
+		}
+	}
+
+	@media screen and (max-width: 1200px) {
+		&__name span,
+		.fixed,
+		h2 {
+			font-size: 1.03rem;
+		}
+		&__content {
+			&__ingredients-list {
+				font-size: 0.9rem;
+			}
+			&__cart input {
+				font-size: 0.8rem;
+				max-width: 2.5rem;
+			}
+		}
+		&__btn {
+			font-size: 0.7rem !important;
+		}
+	}
+
+	@media screen and (max-width: 1000px) {
+		&__name span,
+		.fixed,
+		h2 {
+			font-size: 0.9rem;
+		}
+		&__content {
+			&__ingredients-list {
+				font-size: 0.8rem;
+			}
+			&__cart input {
+				font-size: 0.7rem;
+				padding: 0rem 0.4rem;
+				max-width: 2rem;
+			}
+		}
+		&__name.loading {
+			font-size: 1.75rem;
+		}
+		&__btn {
+			font-size: 0.6rem !important;
+		}
+	}
+
+	@media screen and (max-width: 860px) {
+		&__name span,
+		.fixed,
+		h2 {
+			font-size: 0.8rem;
+		}
+		&__content {
+			&__ingredients-list {
+				font-size: 0.75rem;
+			}
+			&__cart input {
+				font-size: 0.6rem;
+				max-width: 1.75rem;
+			}
+		}
+		&__name.loading {
+			font-size: 1.5rem;
+		}
+		&__btn {
+			font-size: 0.5rem !important;
+		}
+	}
+
+	@media screen and (max-width: 720px) {
+		flex-direction: column;
+		&__galery {
+			width: 100%;
+			&-other ul {
+				margin-top: 0.75rem;
+			}
+		}
+		&__content {
+			padding-left: unset;
+			margin-top: 0.5rem;
+			width: 100%;
+			&__ingredients-list {
+				font-size: 1.1rem;
+			}
+			&__cart input {
+				font-size: 1rem;
+				padding: 0.15rem 0.4rem;
+				max-width: 3.5rem;
+			}
+		}
+		&__name span,
+		.fixed,
+		h2 {
+			font-size: 1.5rem;
+		}
+		&__btn {
+			font-size: 1rem !important;
+		}
+		&__name.loading {
+			font-size: 1.25rem;
+		}
+	}
+
+	@media screen and (max-width: 600px) {
+		&__content {
+			&__ingredients-list {
+				font-size: 0.9rem;
+			}
+			&__cart input {
+				font-size: 0.9rem;
+				padding: 0rem 0.4rem;
+				max-width: 2.75rem;
+			}
+		}
+		&__name span,
+		.fixed,
+		h2 {
+			font-size: 1.1rem;
+		}
+		&__btn {
+			font-size: 0.9rem !important;
+		}
+		&__name.loading {
+			font-size: 0.8rem;
+		}
+	}
+
+	@media screen and (max-width: 600px) {
+		&__galery-other ul {
+			gap: 0.25rem;
+		}
+		&__content {
+			&__ingredients-list {
+				font-size: 0.8rem;
+			}
+			&__cart input {
+				font-size: 0.75rem;
+				max-width: 2.5rem;
+			}
+		}
+		&__name span,
+		.fixed,
+		h2 {
+			font-size: 0.95rem;
+		}
+		&__btn {
+			font-size: 0.75rem !important;
+		}
+	}
+
+	@media screen and (max-width: 450px) {
+		&__content {
+			&__ingredients-list {
+				font-size: 0.75rem;
+			}
+			&__cart input {
+				font-size: 0.7rem;
+				max-width: 2rem;
+			}
+		}
+		&__name span,
+		.fixed,
+		h2 {
+			font-size: 0.85rem;
+		}
+		&__btn {
+			font-size: 0.65rem !important;
+		}
+		&__name.loading {
+			font-size: 0.7rem;
+		}
+	}
+
+	@media screen and (max-width: 400px) {
+		&__content {
+			&__ingredients-list {
+				font-size: 0.7rem;
+			}
+			&__cart input {
+				font-size: 0.65rem;
+				max-width: 1.75rem;
+			}
+		}
+		&__name span,
+		.fixed,
+		h2 {
+			font-size: 0.8rem;
+		}
+		&__btn {
+			font-size: 0.6rem !important;
+		}
+		&__name.loading {
+			font-size: 0.6rem;
+		}
+	}
+}

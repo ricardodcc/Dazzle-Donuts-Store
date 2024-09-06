@@ -1,0 +1,308 @@
+@use '../utils' as *;
+
+.hero {
+	// @include display-flex(center, center);
+	display: flex;
+	align-items: center;
+	@media screen and (max-width: 720px) {
+		flex-direction: column;
+	}
+
+	&__content {
+		width: 60%;
+		flex: 0 0 auto;
+		color: var(--c-white);
+		padding-top: 1rem;
+
+		h2 {
+			font-family: var(--f-company-name);
+			font-size: 3.75rem;
+			letter-spacing: 0.5rem;
+			span {
+				color: var(--c-prim-light);
+			}
+		}
+		h3 {
+			line-height: 3.5rem;
+			margin-bottom: 1rem;
+			font-family: var(--f-heading-navbar);
+			font-size: 2.75rem;
+			span {
+				color: var(--c-ter-light);
+			}
+		}
+		&-buttons {
+			@include display-flex(flex-start, center, 1.5rem);
+			margin-top: -0.5rem;
+		}
+		&-socials {
+			@include display-flex(flex-start, center, 0.65rem);
+			color: var(--c-prim-light);
+			margin-top: 1rem;
+			p {
+				font-size: 1.25rem;
+				font-family: var(--f-heading-navbar);
+				font-weight: bold;
+			}
+			&__list {
+				@extend %reset-list-style;
+				@include display-flex(center, center, 0.5rem);
+				&-item {
+					margin: 0 0.35rem;
+					img {
+						max-width: 1.5rem;
+					}
+				}
+			}
+		}
+
+		@media screen and (max-width: 1500px) {
+			h2 {
+				font-size: 3.15rem;
+			}
+
+			h3 {
+				font-size: 2.3rem;
+				line-height: 3rem;
+			}
+
+			&-socials {
+				p {
+					font-size: 1.1rem;
+				}
+
+				&__list-item {
+					img {
+						max-width: 1.25rem;
+					}
+				}
+			}
+		}
+
+		@media screen and (max-width: 1170px) {
+			h2 {
+				font-size: 2.5rem;
+			}
+
+			h3 {
+				line-height: 2.5rem;
+				font-size: 1.9rem;
+			}
+
+			&-buttons {
+				gap: 1rem;
+			}
+
+			&-socials {
+				gap: 0.4rem;
+				margin-top: 0.75rem;
+				p {
+					font-size: 1rem;
+				}
+				&__list-item {
+					margin: 0 0.15rem;
+					img {
+						max-width: 1.1rem;
+					}
+				}
+			}
+		}
+
+		@media screen and (max-width: 1000px) {
+			h2 {
+				font-size: 2rem;
+			}
+
+			h3 {
+				line-height: 2.25rem;
+				font-size: 1.6rem;
+			}
+
+			&-socials {
+				gap: 0.4rem;
+				margin-top: 0.75rem;
+				p {
+					font-size: 0.9rem;
+				}
+				&__list-item {
+					img {
+						max-width: 0.95rem;
+					}
+				}
+			}
+		}
+
+		@media screen and (max-width: 870px) {
+			h2 {
+				letter-spacing: 0.25rem;
+				font-size: 1.65rem;
+			}
+
+			h3 {
+				line-height: 1.75rem;
+				font-size: 1.4rem;
+			}
+			&-button {
+				font-size: 0.55rem !important;
+			}
+		}
+
+		@media screen and (max-width: 720px) {
+			text-align: center;
+			width: 100%;
+
+			h2 {
+				font-size: 2.35rem;
+				margin-bottom: 0.25rem;
+			}
+
+			h3 {
+				line-height: 2.25rem;
+				font-size: 2rem;
+			}
+
+			&-buttons {
+				justify-content: center;
+			}
+			&-button {
+				font-size: unset !important;
+			}
+
+			&-socials {
+				justify-content: center;
+				p {
+					font-size: 1.35rem;
+				}
+				&__list-item {
+					margin: 0 0.35rem;
+				}
+			}
+		}
+
+		@media screen and (max-width: 580px) {
+			h2 {
+				font-size: 1.85rem;
+			}
+
+			h3 {
+				line-height: 2rem;
+				font-size: 1.75rem;
+			}
+			&-button {
+				font-size: 0.75rem !important;
+			}
+			&-social {
+				p {
+					font-size: 1.1rem;
+				}
+				&__list-item {
+					img {
+						max-width: 1rem;
+					}
+				}
+			}
+		}
+
+		@media screen and (max-width: 500px) {
+			h2 {
+				font-size: 1.25rem;
+			}
+
+			h3 {
+				line-height: 1.6rem;
+				font-size: 1.25rem;
+			}
+			&-button {
+				font-size: 0.55rem !important;
+			}
+			&-socials {
+				gap: 0.3rem;
+				margin-top: 0.5rem;
+				p {
+					font-size: 0.8rem;
+				}
+				&__list-item {
+					margin: 0 0.25rem;
+					img {
+						max-width: 0.85rem;
+					}
+				}
+			}
+		}
+
+		@media screen and (max-width: 400px) {
+			h2 {
+				font-size: 1rem;
+			}
+
+			h3 {
+				line-height: 1.4rem;
+				font-size: 1.1rem;
+			}
+			&-button {
+				font-size: 0.45rem !important;
+			}
+			&-socials {
+				p {
+					font-size: 0.7rem;
+				}
+
+				&__list-item {
+					img {
+						max-width: 0.75rem;
+					}
+				}
+			}
+		}
+
+		@media screen and (max-width: 360px) {
+			h2 {
+				font-size: 0.75rem;
+			}
+
+			h3 {
+				line-height: 1.2rem;
+				font-size: 0.9rem;
+			}
+
+			&-buttons {
+				gap: 0.65rem;
+				margin-top: -0.65rem;
+			}
+			&-socials {
+				gap: 0.2rem;
+				margin-top: 0.5rem;
+				p {
+					font-size: 0.6rem;
+				}
+
+				&__list-item {
+					margin: 0 0.2rem;
+					img {
+						max-width: 0.65rem;
+					}
+				}
+			}
+		}
+	}
+
+	&__image {
+		@include display-flex(center, center);
+		width: 40%;
+		img {
+			@extend %img-reset;
+			width: 100%;
+			height: auto;
+			padding: 1rem 0;
+		}
+
+		@media screen and (max-width: 720px) {
+			width: 100%;
+			transform: translateX(-25px);
+		}
+
+		@media screen and (max-width: 400px) {
+			transform: translateX(-15px);
+		}
+	}
+}

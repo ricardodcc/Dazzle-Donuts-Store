@@ -1,0 +1,80 @@
+@use '../utils' as *;
+
+.blog {
+	padding-bottom: 1.25rem !important;
+	> div:first-child {
+		@include display-flex(flex-start, center, 1rem);
+
+		button {
+			padding: 0.05rem 0.75rem;
+			font-size: 0.9rem;
+		}
+	}
+
+	&__heading {
+		font-family: var(--f-company-name);
+		color: var(--c-prim-light);
+		font-size: 2.5rem;
+		letter-spacing: 2px;
+		&-empty {
+			font-size: 1.5rem;
+			color: var(--c-prim-light);
+			font-weight: bold;
+			font-family: var(--f-heading-navbar);
+		}
+	}
+
+	@media screen and (max-width: 1000px) {
+		> div:first-child button {
+			font-size: 0.75rem;
+		}
+		&__heading {
+			font-size: 2rem;
+			&-empty {
+				font-size: 1.25rem;
+			}
+		}
+	}
+
+	@media screen and (max-width: 860px) {
+		> div:first-child button {
+			font-size: 0.65rem;
+		}
+		&__heading {
+			font-size: 1.75rem;
+			&-empty {
+				font-size: 1.1rem;
+			}
+		}
+	}
+
+	@media screen and (max-width: 500px) {
+		> div:first-child {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0;
+			padding-bottom: 0.5rem;
+			button {
+				font-size: 0.65rem;
+			}
+		}
+		&__heading {
+			font-size: 1.65rem;
+			&-empty {
+				font-size: 1rem;
+			}
+		}
+	}
+
+	@media screen and (max-width: 400px) {
+		> div:first-child button {
+			font-size: 0.55rem;
+		}
+		&__heading {
+			font-size: 1.4rem;
+			&-empty {
+				font-size: 0.85rem;
+			}
+		}
+	}
+}

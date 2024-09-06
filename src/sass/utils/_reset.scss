@@ -1,0 +1,39 @@
+/* reset basics */
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	/* border: 1px solid green; */
+}
+
+html {
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+	scroll-behavior: smooth;
+}
+
+body {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	background-color: var(--c-bg-light);
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+ul {
+	list-style-type: none;
+}
+
+img {
+	display: block;
+}
+
+main {
+	display: block !important;
+}
